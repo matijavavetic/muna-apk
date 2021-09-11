@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity{
 
     private AdapterListe adapter;
     private RESTTask asyncTask;
-    private String id = String.valueOf(Math.random());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +48,7 @@ public class MainActivity extends AppCompatActivity{
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 asyncTask = new RESTTask();
-                asyncTask.execute("https://c1dc-93-143-201-122.ngrok.io/api/stat?userId=" + id);
+                asyncTask.execute("https://c1dc-93-143-201-122.ngrok.io/api/stat");
             }
         });
 
@@ -60,9 +59,8 @@ public class MainActivity extends AppCompatActivity{
             }
 
             @Override
-            public boolean onQueryTextSubmit(String queryInput) {
+            public boolean onQueryTextSubmit(String input) {
                 asyncTask = new RESTTask();
-                String input = "?value=" + queryInput + "&userId=" + id;
                 asyncTask.execute("https://c1dc-93-143-201-122.ngrok.io/api/check" + input);
                 return true;
             }

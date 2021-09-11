@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Muna</string>
+    <string name="REST_URL">https://c1dc-93-143-201-122.ngrok.io/api/</string>
+    <string name="app_label">Muna</string>
+</resources>
